@@ -12,8 +12,8 @@ CREATE TABLE emp (
     salary DECIMAL(10, 2) -- Adjust the precision and scale based on your requirements
 );
 
-Sample Data
-The script inserts sample data into the 'emp' table:
+# Sample Data
+# The script inserts sample data into the 'emp' table:
 
 INSERT INTO emp (id, salary) VALUES
 (1, 50000.00),
@@ -22,7 +22,17 @@ INSERT INTO emp (id, salary) VALUES
 (4, 70000.00),
 (5, 55000.00);
 
+# Query to Find Second-Highest Salary
+# To find the second-highest salary in the 'emp' table, the following query is used:
+
 SELECT MAX(salary) AS second_highest_salary
 FROM emp
 WHERE salary < (SELECT MAX(salary) FROM emp);
+
+# Updating Salary
+# An example of updating an existing salary is also included in the script. For instance:
+
+UPDATE emp
+SET salary = 82000.00
+WHERE id = 1;
 
